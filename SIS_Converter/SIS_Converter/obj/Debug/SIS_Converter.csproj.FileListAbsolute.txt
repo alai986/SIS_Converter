@@ -38,3 +38,43 @@ D:\alai\C#程序\SIS-Converter\SIS_Converter\SIS_Converter\bin\Debug\EntityFrame
 D:\alai\C#程序\SIS-Converter\SIS_Converter\SIS_Converter\bin\Debug\System.Data.SQLite.xml
 D:\alai\C#程序\SIS-Converter\SIS_Converter\SIS_Converter\bin\Debug\System.Data.SQLite.dll.config
 D:\alai\C#程序\SIS-Converter\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.MainForm.resources
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\SIS_Converter.exe.config
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\SIS_Converter.exe
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\SIS_Converter.pdb
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\ConsoleTables.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\EntityFramework.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\EntityFramework.SqlServer.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Serilog.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Serilog.Sinks.Console.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Serilog.Sinks.File.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Sharp7.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\SimpleTCP.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\SqlSugar.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.Data.SQLite.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.Data.SQLite.EF6.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.Data.SQLite.Linq.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.ValueTuple.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.Xml.XmlDocument.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\unvell.ReoGrid.dll
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\ConsoleTables.pdb
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\EntityFramework.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\EntityFramework.SqlServer.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Serilog.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Serilog.Sinks.Console.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Serilog.Sinks.File.pdb
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Serilog.Sinks.File.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\Sharp7.pdb
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.Data.SQLite.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.Data.SQLite.dll.config
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\System.ValueTuple.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\bin\Debug\unvell.ReoGrid.xml
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.csprojAssemblyReference.cache
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.DataShow.resources
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.MainForm.resources
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.Properties.Resources.resources
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.csproj.GenerateResource.cache
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.csproj.CoreCompileInputs.cache
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.csproj.CopyComplete
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.exe
+D:\alai\C#程序\SIS-Converter 20200723\SIS_Converter\SIS_Converter\obj\Debug\SIS_Converter.pdb

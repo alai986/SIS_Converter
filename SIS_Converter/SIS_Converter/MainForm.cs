@@ -15,6 +15,7 @@ namespace SIS_Converter
     {
 
         private S7Client Client;
+      
         // private Worksheet sheet;      
         private string SequenceNumber = "0001";//发送的序列号
         private string AssignmentID = "00000001";//任务ID
@@ -39,8 +40,9 @@ namespace SIS_Converter
         {
             InitializeComponent();
             Client = new S7Client();
-            Thread t1 = new Thread(new ThreadStart(ReadThread));
-            t1.Start();
+            Thread readThread = new Thread(new ThreadStart(ReadThread));
+           
+            readThread.Start();
             recData.ValueChange += new Event.tempChange(recDataValueChange);
             sendData.ValueChange += new Event.tempChange(sendDataValueChange);
 
@@ -85,8 +87,9 @@ namespace SIS_Converter
             Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.Console()
                .WriteTo.File("log.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
                .CreateLogger();
+            
         }
-
+      
         private void ReadThread()
         {
 
@@ -115,27 +118,7 @@ namespace SIS_Converter
                         // sendData.Data = server1SendData;//触发委托监视事件,异步委托数据有可能会变化
 
                     }
-                    if (msg.MessageString.Substring(18, 3) == "CSR")
-                    {
-
-                        if (msg.MessageString.Substring(48, 3) != "000")//如果返回错误
-                        {
-                            string[] craneData = new string[17];
-                            craneData[0] = "Crane1";
-                            craneData[1] = SequenceNumber;
-                            craneData[2] = (int.Parse(AssignmentID) - 1).ToString("00000000");
-                            Telegram.DER1(craneData, out server1SendData);
-                            server1.Broadcast(server1SendData);
-                            Log.Information(server1SendData);
-                            listBox1.Text += server1SendData + "\r\n";
-                            // sendData.Data = server1SendData;//触发委托监视事件
-                            changeNumber(ref SequenceNumber, ref AssignmentID);
-                        }
-                        // if (!Server1SendData.Contains("ARQ")) return;
-
-
-
-                    }
+                   
 
 
                     //如果是DUM，那么要返回DUA ，进行心跳
@@ -152,6 +135,62 @@ namespace SIS_Converter
 
                     //如果是NCK1 ，那么要发送SYN复位
                     //如果是NCK2，那么要等待Buffer timeout 时间重新发
+                   
+
+
+                }));
+
+
+
+            };
+            server1.ClientConnected += (sender, msg) =>
+            {
+
+                pictureBox1.Image = Image.FromFile(@"green.png");
+
+            };
+            server1.ClientDisconnected += (sender, msg) =>
+            {
+
+                pictureBox1.Image = Image.FromFile(@"red.png");
+            };
+        }
+
+
+        private void TaskThread()
+        {
+            int step = 1;//arq
+            server1.DataReceived += (sender, msg) =>
+            {
+                // msg.Reply(msg.MessageString);   
+             
+                this.BeginInvoke(new Action(() =>
+                {
+
+                    //如果起始和终止符不是<>,那么返回                                  
+                    if (msg.MessageString.Substring(18, 3) == "CSR")
+                    {
+
+
+                        if (msg.MessageString.Substring(48, 3) != "000")//如果返回错误
+                        {
+                            string[] craneData = new string[17];
+                            craneData[0] = "Crane1";
+                            craneData[1] = SequenceNumber;
+                            craneData[2] = (int.Parse(AssignmentID) - 1).ToString("00000000");
+                            Telegram.DER1(craneData, out server1SendData);
+                            server1.Broadcast(server1SendData);
+                            Log.Information(server1SendData);
+                            listBox1.Text += server1SendData + "\r\n";
+                            // sendData.Data = server1SendData;//触发委托监视事件
+                            changeNumber(ref SequenceNumber, ref AssignmentID);
+                        }
+                        // if (!Server1SendData.Contains("ARQ")) return;
+                        else
+                        {
+                            step += 1;
+                        }
+                    }
                     if (msg.MessageString.Substring(18, 3) == "NCK")
                     {
                         if (msg.MessageString.Substring(21, 1) == "1")
@@ -191,26 +230,10 @@ namespace SIS_Converter
                     }
 
 
+
                 }));
-
-
-
-            };
-            server1.ClientConnected += (sender, msg) =>
-            {
-
-                pictureBox1.Image = Image.FromFile(@"green.png");
-
-            };
-            server1.ClientDisconnected += (sender, msg) =>
-            {
-
-                pictureBox1.Image = Image.FromFile(@"red.png");
             };
         }
-
-
-
         // 连接存在没有接收到报文，60s后，发送心跳，Client 先发送DUM
         public void idleFunc(object source, System.Timers.ElapsedEventArgs e)
 
@@ -273,11 +296,14 @@ namespace SIS_Converter
 
         private void telegramARQ(string[] cranedata)
         {
-
+            Thread taskThread = new Thread(new ThreadStart(TaskThread));
+            taskThread.Start();
             Telegram.ARQ1(cranedata, out server1SendData);
             server1.Broadcast(server1SendData);
             Log.Information(server1SendData);
             changeNumber(ref SequenceNumber, ref AssignmentID);
+          
+           
 
 
         }
